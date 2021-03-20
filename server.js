@@ -5,13 +5,13 @@ const path = require('path');
 
 require('dotenv').config();
 
-const helpers = require('./utils/helpers');
+//const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
 
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // turn on routes
 app.use(session(sess));
-//app.use(routes);
+app.use(routes);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

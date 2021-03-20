@@ -57,7 +57,7 @@ router.post('/', withAuth, (req, res) => {
     })
         .then(dbUserData => {
             req.session.save(() => {
-                req.session.user_id = dbUserDatra.id;
+                req.session.user_id = dbUserData.id;
                 req.session.username = dbUserData.username;
                 req.session.loggedIn = true;
 
@@ -77,7 +77,7 @@ router.post('/login', (req, res) => {
         }
     }).then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'no user with that username!' });
+            res.status(400).json({ message: 'No user with that username!' });
             return;
         }
 
@@ -97,3 +97,6 @@ router.post('/login', (req, res) => {
 
     });
 });
+
+
+module.exports = router;

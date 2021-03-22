@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
             },
             {
                 model: Post,
-                attributes: ['id', 'title', 'post_url', 'created_at']
+                attributes: ['id', 'title', 'post_content', 'created_at']
             }
         ]
     })
@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
 });
 
 //POST /api/users
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
         email: req.body.email,

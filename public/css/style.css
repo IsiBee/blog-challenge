@@ -46,8 +46,8 @@ p {
   font-size: 1.3rem;
   text-decoration:none;
   padding: 6px 5px;
-  width: 100%;
-  display: block;
+  width: 35%;
+  display: inline-block;
   margin: 5px 0;
   border-radius: var(--border-radius);
   color: var(--primary);

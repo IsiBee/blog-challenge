@@ -3,7 +3,6 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const path = require('path');
 
-require('dotenv').config();
 
 const helpers = require('./utils/helpers');
 
@@ -16,7 +15,7 @@ const hbs = exphbs.create({ helpers });
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
-    secret: process.env.DB_SECRET,
+    secret: '75]YH2h)pA2k)',
     cookie: {
         maxAge: (30 * 60 * 60 * 60)
     },

@@ -1,25 +1,9 @@
-<section>
-    <h2>Create New Post</h2>
-
-    <form class="new-post-form">
-        <div>
-            <label for="post-title">Title</label>
-            <input type="text" id="post-title" name="post-title" />
-        </div>
-        <div>
-            <label for="post-url">Content</label>
-            <textarea id="post-body" name="post-body"></textarea>
-        </div>
-        <button type="submit" class="btn">Create</button>
-    </form>
-</section>
-
 {{#if posts.length}}
 <section>
     <h2>Your Posts</h2>
-    <ol>
+    <ol class="list-group py-4">
         {{#each posts as |post|}}
-        <li>
+        <li class="list-group-item">
             {{> post-info post}}
             <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
         </li>
@@ -27,5 +11,21 @@
     </ol>
 </section>
 {{/if}}
+
+<section>
+    <h2>Create New Post</h2>
+
+    <form class="new-post-form">
+        <div>
+            <label class="form-label" for="post-title">Title</label>
+            <input class="form-control" type="text" id="post-title" name="post-title" />
+        </div>
+        <div>
+            <label class="form-label" for="post-url">Content:</label>
+            <textarea class="form-control" id="post-body" name="post-body"></textarea>
+        </div>
+        <button type="submit" class="btn">Create</button>
+    </form>
+</section>
 
 <script src="/js/add-post.js"></script>

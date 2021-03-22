@@ -3,16 +3,16 @@
     <h2>
         Edit Post
     </h2>
-    <form class="edit-post-form">
+    <form class="edit-post-form p-4">
         <div>
-            <h3>Title:</h3>
-            <input name="post-title" type="text" value="{{post.title}}" />
+            <h3 class="form-label">Title:</h3>
+            <input class="form-control" name="post-title" type="text" value="{{post.title}}" />
         </div>
         <div>
-            <h3>Post Content:</h3>
-            <textarea name="post-body">{{post.post_content}}</textarea>
+            <h3 class="form-label">Post Content:</h3>
+            <textarea class="form-control" name="post-body">{{post.post_content}}</textarea>
         </div>
-        <div>
+        <div class="py-2">
             by you on {{format_date post.created_at}}
             |
             <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
@@ -22,23 +22,5 @@
     </form>
 </article>
 
-<form class="comment-form">
-    <div>
-        <h3>Add Comment:</h3>
-        <textarea name="comment-body"></textarea>
-    </div>
-
-    <div>
-        <button class="btn" type="submit">add comment</button>
-    </div>
-</form>
-
-{{#if posts.length}}
-<li>
-    {{> post-info post}}
-</li>
-{{/if}}
-
 <script src="/js/edit-post.js"></script>
 <script src="/js/delete-post.js"></script>
-<script src="/js/comment.js"></script>

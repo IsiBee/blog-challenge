@@ -1,11 +1,10 @@
 {{#if posts.length}}
 <section>
     <h2>Your Posts</h2>
-    <ol class="list-group py-4">
+    <ol class="py-1">
         {{#each posts as |post|}}
-        <li class="list-group-item">
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        <li class="card p-2">
+            <a href="/dashboard/edit/{{post.id}}">{{> post-info post}}</a>
         </li>
         {{/each}}
     </ol>
@@ -15,7 +14,7 @@
 <section>
     <h2>Create New Post</h2>
 
-    <form class="new-post-form">
+    <form class="new-post-form px-4">
         <div>
             <label class="form-label" for="post-title">Title</label>
             <input class="form-control" type="text" id="post-title" name="post-title" />
